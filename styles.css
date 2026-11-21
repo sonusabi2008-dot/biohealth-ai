@@ -1,0 +1,100 @@
+/* Minimalist 3-Color Design System for AI Bioinformatics Portal */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  /* 3-COLOR SYSTEM */
+  /* Tone 1: Neutral Monochrome Base */
+  --bg-base: #090d16;
+  --bg-surface: #0f172a;
+  --bg-surface-elevated: #162036;
+  --border-subtle: #1e293b;
+  --border-active: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  /* Tone 2: Primary Accent (Bio-Cyan) */
+  --accent-cyan: #06b6d4;
+  --accent-cyan-hover: #22d3ee;
+  --accent-cyan-subtle: rgba(6, 182, 212, 0.1);
+  --accent-cyan-border: rgba(6, 182, 212, 0.25);
+
+  /* Tone 3: Secondary Accent (Slate-Indigo) */
+  --accent-indigo: #6366f1;
+  --accent-indigo-hover: #818cf8;
+  --accent-indigo-subtle: rgba(99, 102, 241, 0.1);
+  --accent-indigo-border: rgba(99, 102, 241, 0.25);
+}
+
+[data-theme="light"] {
+  --bg-base: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --border-subtle: #e2e8f0;
+  --border-active: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+
+  --accent-cyan: #0284c7;
+  --accent-cyan-hover: #0369a1;
+  --accent-cyan-subtle: rgba(2, 132, 199, 0.08);
+  --accent-cyan-border: rgba(2, 132, 199, 0.25);
+
+  --accent-indigo: #4f46e5;
+  --accent-indigo-hover: #4338ca;
+  --accent-indigo-subtle: rgba(79, 70, 229, 0.08);
+  --accent-indigo-border: rgba(79, 70, 229, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  line-height: 1.5;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Minimalist Surface Card */
+.minimal-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.minimal-card:hover {
+  border-color: var(--border-active);
+}
+
+/* Minimal Input Sliders */
+input[type="range"] {
+  accent-color: var(--accent-cyan);
+}
+
+/* Clean Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-active);
+  border-radius: 3px;
+}
